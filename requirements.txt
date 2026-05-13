@@ -1,0 +1,16 @@
+streamlit
+pyautogen==0.2.35
+requests
+pymatgen
+scipy
+matplotlib
+numpy
+fpdf
+pillow
+pandas
+openpyxl
+rdkit
+scikit-learn
+deep-translator
+google-generativeai
+google-cloud-aiplatform
