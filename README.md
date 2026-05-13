@@ -1,1 +1,0 @@
-# Comprehensive-Virtual-Solar-Cell-Lab
