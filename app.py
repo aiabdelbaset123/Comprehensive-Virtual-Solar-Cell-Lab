@@ -1197,6 +1197,37 @@ def render_downloads_section(messages, task_theme, error_text=None):
     st.download_button(T("param_sweep"), buf.getvalue(), "sweep.png", mime="image/png")
     plt.close(fig)
 
+
+    from fpdf import FPDF
+    import os
+
+    pdf = FPDF()
+    pdf.add_page()
+
+    # تحميل خط Unicode
+    font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+
+    pdf.add_font(
+        "DejaVu",
+        "",
+        font_path,
+        uni=True
+    )
+
+    pdf.set_font("DejaVu", size=12)
+
+    # النص
+    safe_text = str(messages)
+
+    pdf.multi_cell(
+        0,
+        10,
+        txt=safe_text
+    )
+
+    # إخراج PDF
+    pdf_data = pdf.output(dest="S").encode("latin1")
+
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Helvetica", size=12)
