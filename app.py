@@ -510,7 +510,8 @@ def render_api_sidebar(gemini_default, mp_default, semantic_scholar_default, lan
         gemini_model_options = st.session_state.get("available_gemini_models") or GEMINI_FALLBACK_MODELS
         gemini_model_options = list(dict.fromkeys([normalize_gemini_model_name(model) for model in gemini_model_options if model]))
         if "gemini_economy_mode" not in st.session_state:
-            st.session_state.gemini_economy_mode = True
+            st.session_state["gemini_economy_mode"] = True
+        
         economy_mode = st.checkbox(
             "وضع اقتصادي لـ Gemini / Economy mode",
             key="gemini_economy_mode",
